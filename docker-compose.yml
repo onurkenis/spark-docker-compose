@@ -35,6 +35,8 @@ spark-master:
    - "8080:8080"
    # Spark master job submission port
    - "7077:7077"
+   # Spark master rest port
+   - "6066:6066"
  environment:
    # NAMENODE_HOSTNAME is the hostname of the container running Namenode service
    - NAMENODE_HOSTNAME=hdfs-namenode-host

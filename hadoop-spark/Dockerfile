@@ -1,5 +1,4 @@
 FROM ubuntu:14.04
-MAINTAINER Venki Korukanti (venki.korukanti@gmail.com)
 
 # Install.
 RUN \
@@ -36,10 +35,10 @@ RUN \
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
 # Download Hadoop package
-ADD http://apache.mirrors.tds.net/hadoop/common/hadoop-2.6.0/hadoop-2.6.0.tar.gz /tmp/
+ADD https://archive.apache.org/dist/hadoop/core/hadoop-2.6.0/hadoop-2.6.0.tar.gz /tmp/
 
 # Download Spark package
-ADD http://d3kbcqa49mib13.cloudfront.net/spark-1.4.0-bin-hadoop2.6.tgz /tmp/
+ADD https://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.6.tgz /tmp/
 
 # Create /opt directory
 RUN mkdir -p /opt/
@@ -62,8 +61,8 @@ RUN mkdir -p /opt/data/apps/dfs/name
 RUN mkdir -p /opt/data/apps/dfs/data
 
 # Unpack spark into /opt and set SPARK_HOME
-RUN tar -xzf /tmp/spark-1.4.0-bin-hadoop2.6.tgz -C /opt/
-ENV SPARK_HOME /opt/spark-1.4.0-bin-hadoop2.6
+RUN tar -xzf /tmp/spark-2.2.0-bin-hadoop2.6.tgz -C /opt/
+ENV SPARK_HOME /opt/spark-2.2.0-bin-hadoop2.6
 
 ENV PATH $PATH:${HADOOP_HOME}/sbin/:${HADOOP_HOME}/bin:${SPARK_HOME}/sbin/:${SPARK_HOME}/bin
 
