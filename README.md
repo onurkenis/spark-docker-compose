@@ -25,6 +25,3 @@ Note: Run below commands from the directory where `docker-compose.yml` file is p
     * `cd /sbin`   
     * `spark-submit --class com.onurkenis.app.App --master spark://spark-master-host:7077 --deploy-mode cluster        hdfs:///app/test-spark.jar`
 
-
-
-![WEB UI](http://i65.tinypic.com/2qavf9u.png)
